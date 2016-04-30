@@ -1,0 +1,405 @@
+////////////////////////////////////////////////////////////////////////////////
+// Unsorted
+////////////////////////////////////////////////////////////////////////////////
+
+.center(x) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center(xy) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.clearfix() {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+ // Тень, анимация которой не должна тормозить на телефонах.
+ // Родителю задать position: relative;
+.smooth-shadow(@initial-shadow: 0 0 10px #333; @final-shadow: 0 0 20px #333; @duration: .5s) {
+  box-shadow: @initial-shadow;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    box-shadow: @final-shadow;
+    opacity: 0;
+    transition: opacity @duration ease-in-out;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+.cover() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Кастомный скроллбар (Chrome, Opera, Safari, IE, but not Edge)
+.scrollbar(@size: 5px; @foreground-color: #eee; @background-color: #fff; @border-radius: 0;) {
+  // For Google Chrome
+  ::-webkit-scrollbar {
+    width: @size;
+    height: @size;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: @foreground-color;
+    border-radius: @border-radius;
+  }
+  ::-webkit-scrollbar-track {
+    background: @background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: @foreground-color;
+    scrollbar-track-color: @background-color;
+  }
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Reset
+////////////////////////////////////////////////////////////////////////////////
+
+.ul-reset() {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.link-reset() {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fieldset-reset() {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  border: none;
+}
+
+.children-reset() {
+  & > *:first-child {
+    margin-top: 0;
+  }
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Underlines
+////////////////////////////////////////////////////////////////////////////////
+
+ // Родителю задать position: relative;
+
+.underline(full-width; @height: 2px; @background-color: #222) {
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: @height;
+    background-color: @background-color;
+  }
+}
+
+.underline(centered; @gutter: 10px; @height: 2px; @background-color: #222) {
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: @gutter;
+    right: @gutter;
+    height: @height;
+    background-color: @background-color;
+  }
+}
+
+.underline(short; @width: 60px; @height: 3px; @background-color: @pink) {
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: @width;
+    height: @height;
+    margin-left: -@width/2;
+    background-color: @background-color;
+  }
+}
+
+.underline(left; @width: 200px; @height: 2px; @background-color: #222) {
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: @width;
+    height: @height;
+    background-color: @background-color;
+  }
+}
+
+.underline(triangle; @gutter: 10px; @line-height: 4px; @triangle-size: 10px; @background-color: #222) {
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+  }
+  &::before {
+    left: @gutter;
+    right: @gutter;
+    height: @line-height;
+    background-color: @background-color;
+  }
+  &::after {
+    left: 50%;
+    margin-left: -@triangle-size;
+    border-width: 0 @triangle-size @triangle-size @triangle-size;
+    border-style: solid;
+    border-color: transparent transparent @background-color transparent;
+  }
+}
+
+.underline(gradient; @height: 2px; @background-color: #222) {
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: @height;
+    background-image: linear-gradient(90deg, transparent, @background-color, transparent);
+  }
+}
+
+.underline(rhombs; @line-width: 200px; @line-height: 2px; @line-color: #222; @rhomb-size: 20px; @rhomb-color: #222) {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+  &::before {
+    bottom: @rhomb-size/2;
+    left: 50%;
+    width: @line-width;
+    height: @line-height;
+    margin-left: -@line-width/2;
+    background-image: linear-gradient(90deg, transparent, @line-color, transparent);
+  }
+  &::after {
+    bottom: 0;
+    left: 50%;
+    width: @rhomb-size;
+    height: @rhomb-size;
+    margin-top: -(@rhomb-size - @line-height)/2;
+    background-color: @rhomb-color;
+    box-shadow:
+      -(@rhomb-size * 3 - (@rhomb-size * 1.5)) (@rhomb-size * 3 - (@rhomb-size * 1.5)) 0 -3px fade(@rhomb-color, 70%),
+      -(@rhomb-size * 2 - @rhomb-size) (@rhomb-size * 2 - @rhomb-size) 0 -2px fade(@rhomb-color, 80%),
+      -(@rhomb-size - (@rhomb-size / 2)) (@rhomb-size - (@rhomb-size / 2)) 0 -1px fade(@rhomb-color, 90%),
+      (@rhomb-size - (@rhomb-size / 2)) -(@rhomb-size - (@rhomb-size / 2)) 0 -1px fade(@rhomb-color, 90%),
+      (@rhomb-size * 2 - @rhomb-size) -(@rhomb-size * 2 - @rhomb-size) 0 -2px fade(@rhomb-color, 80%),
+      (@rhomb-size * 3 - (@rhomb-size * 1.5)) -(@rhomb-size * 3 - (@rhomb-size * 1.5)) 0 -3px fade(@rhomb-color, 70%);
+    transform: translateX(-50%) rotate(45deg);
+  }
+}
+
+.underline(parallelograms; @size: 20px; @background-color: #222) {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: @size;
+    height: @size;
+    margin-left: -@size/2;
+    background-color: @background-color;
+    box-shadow:
+      -(@size*7 - 28) 0 0 -7px fade(@background-color, 30%),
+      -(@size*6 - 18) 0 0 -6px fade(@background-color, 40%),
+      -(@size*5 - 10) 0 0 -5px fade(@background-color, 50%),
+      -(@size*4 - 4) 0 0 -4px fade(@background-color, 60%),
+      -(@size*3) 0 0 -3px fade(@background-color, 70%),
+      -(@size*2 + 2) 0 0 -2px fade(@background-color, 80%),
+      -(@size + 2) 0 0 -1px fade(@background-color, 90%),
+      (@size + 2) 0 0 -1px fade(@background-color, 90%),
+      (@size*2 + 2) 0 0 -2px fade(@background-color, 80%),
+      (@size*3) 0 0 -3px fade(@background-color, 70%),
+      (@size*4 - 4) 0 0 -4px fade(@background-color, 60%),
+      (@size*5 - 10) 0 0 -5px fade(@background-color, 50%),
+      (@size*6 - 18) 0 0 -6px fade(@background-color, 40%),
+      (@size*7 - 28) 0 0 -7px fade(@background-color, 30%);
+  }
+  &::before {
+    top: 0;
+    transform: rotate(45deg) skewY(-45deg);
+  }
+  &::after {
+    bottom: 0;
+    transform: rotate(45deg) skewY(-45deg);
+  }
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Triangles
+////////////////////////////////////////////////////////////////////////////////
+
+.triangle(@_, @size, @color) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.triangle(top, @size, @color) {
+  border-width: 0 @size @size @size;
+  border-color: transparent transparent @color transparent;
+}
+
+.triangle(right, @size, @color) {
+  border-width: @size 0 @size @size;
+  border-color: transparent transparent transparent @color;
+}
+
+.triangle(bottom, @size, @color) {
+  border-width: @size @size 0 @size;
+  border-color: @color transparent transparent transparent;
+}
+
+.triangle(left, @size, @color) {
+  border-width: @size @size @size 0;
+  border-color: transparent @color transparent transparent;
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Diagonal background
+////////////////////////////////////////////////////////////////////////////////
+
+// Фон, скошенный сверху.
+.bg-diagonal(@first-color: transparent; @second-color: #eee; @diagonal-height: 100px) {
+  background:
+    linear-gradient(
+      to right bottom,
+      @first-color 0%,
+      @first-color 50%,
+      @second-color 50%,
+      @second-color 100%)
+    top
+    no-repeat;
+  background-size: 100% @diagonal-height;
+}
+
+
+// Фон, скошенный сверху и снизу.
+.bg-diagonal(@first-color: transparent; @second-color: #eee; @diagonal-height: 100px) {
+  background-image:
+    linear-gradient(
+      to right bottom,
+      @first-color 0%,
+      @first-color 50%,
+      @second-color 50%,
+      @second-color 100%),
+    linear-gradient(
+      to right bottom,
+      @second-color 0%,
+      @second-color 50%,
+      @first-color 50%,
+      @first-color 100%);
+  background-position:
+    top,
+    bottom;
+  background-repeat:
+    no-repeat,
+    no-repeat;
+  background-size:
+    100% @diagonal-height,
+    100% @diagonal-height;
+}
+
+
+// Фон в виде треугольника (вершиной вниз)
+.bg-triangle(@first-color: transparent; @second-color: #eee; @triangle-height: 100px) {
+  background-image:
+    linear-gradient(
+      to right top,
+      @first-color 0%,
+      @first-color 50%,
+      @second-color 50%,
+      @second-color 100%),
+    linear-gradient(
+      to right bottom,
+      @second-color 0%,
+      @second-color 50%,
+      @first-color 50%,
+      @first-color 100%);
+  background-position:
+    bottom left,
+    bottom right;
+  background-repeat:
+    no-repeat,
+    no-repeat;
+  background-size:
+    50% @triangle-height,
+    50% @triangle-height;
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Other
+////////////////////////////////////////////////////////////////////////////////
+
+ // Ярлык, повернутый на -45deg
+ // Родителю задать position: relative; и overflow: hidden;
+.has-tag(@content, @top, @left, @z-index, @background-color) {
+  &::before {
+    content: "@{content}";
+    position: absolute;
+    top: @top;
+    left: @left;
+    z-index: @z-index;
+    width: 100px;
+    background-color: @background-color;
+    transform: rotate(-45deg);
+  }
+}

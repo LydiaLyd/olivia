@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "@{icon-font_name}";
+  font-weight: normal;
+  font-style: normal;
+  src: url("@{icon-font_path}@{icon-font_name}.woff") format("woff");
+}
+
+[class*="icon"]::before {
+  display: inline-block;
+  vertical-align: top;
+  font-family: "@{icon-font_name}";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// .icon--facebook::before { content: "\e800"; }

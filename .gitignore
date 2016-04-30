@@ -1,0 +1,5 @@
+_design
+_temp
+build
+node_modules
+source/_lib
