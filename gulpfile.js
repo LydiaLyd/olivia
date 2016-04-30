@@ -101,8 +101,8 @@ gulp.task("sprite", function () {
     imgName: "sprite.png",
     imgPath: "../img/sprite.png",
     cssName: "sprite.less",
-    padding: 5,
-    algorithm: "binary-tree"
+    padding: 3,
+    algorithm: "top-down"
   }));
 
   var imgStream = spriteData.img

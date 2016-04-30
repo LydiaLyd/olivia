@@ -1,0 +1,187 @@
+
+// LESS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: @icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// @icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// @spritesheet: width height image @spritesheet-sprites;
+
+@app-store-name: 'app-store';
+@app-store-x: 0px;
+@app-store-y: 27px;
+@app-store-offset-x: 0px;
+@app-store-offset-y: -27px;
+@app-store-width: 200px;
+@app-store-height: 71px;
+@app-store-total-width: 200px;
+@app-store-total-height: 960px;
+@app-store-image: '../img/sprite.png';
+@app-store: 0px 27px 0px -27px 200px 71px 200px 960px '../img/sprite.png' 'app-store';
+@contacts-hover-name: 'contacts--hover';
+@contacts-hover-x: 0px;
+@contacts-hover-y: 175px;
+@contacts-hover-offset-x: 0px;
+@contacts-hover-offset-y: -175px;
+@contacts-hover-width: 128px;
+@contacts-hover-height: 128px;
+@contacts-hover-total-width: 200px;
+@contacts-hover-total-height: 960px;
+@contacts-hover-image: '../img/sprite.png';
+@contacts-hover: 0px 175px 0px -175px 128px 128px 200px 960px '../img/sprite.png' 'contacts--hover';
+@contacts-name: 'contacts';
+@contacts-x: 0px;
+@contacts-y: 306px;
+@contacts-offset-x: 0px;
+@contacts-offset-y: -306px;
+@contacts-width: 128px;
+@contacts-height: 128px;
+@contacts-total-width: 200px;
+@contacts-total-height: 960px;
+@contacts-image: '../img/sprite.png';
+@contacts: 0px 306px 0px -306px 128px 128px 200px 960px '../img/sprite.png' 'contacts';
+@email-name: 'email';
+@email-x: 0px;
+@email-y: 0px;
+@email-offset-x: 0px;
+@email-offset-y: 0px;
+@email-width: 31px;
+@email-height: 24px;
+@email-total-width: 200px;
+@email-total-height: 960px;
+@email-image: '../img/sprite.png';
+@email: 0px 0px 0px 0px 31px 24px 200px 960px '../img/sprite.png' 'email';
+@google-play-name: 'google-play';
+@google-play-x: 0px;
+@google-play-y: 101px;
+@google-play-offset-x: 0px;
+@google-play-offset-y: -101px;
+@google-play-width: 200px;
+@google-play-height: 71px;
+@google-play-total-width: 200px;
+@google-play-total-height: 960px;
+@google-play-image: '../img/sprite.png';
+@google-play: 0px 101px 0px -101px 200px 71px 200px 960px '../img/sprite.png' 'google-play';
+@image-hover-name: 'image--hover';
+@image-hover-x: 0px;
+@image-hover-y: 699px;
+@image-hover-offset-x: 0px;
+@image-hover-offset-y: -699px;
+@image-hover-width: 129px;
+@image-hover-height: 129px;
+@image-hover-total-width: 200px;
+@image-hover-total-height: 960px;
+@image-hover-image: '../img/sprite.png';
+@image-hover: 0px 699px 0px -699px 129px 129px 200px 960px '../img/sprite.png' 'image--hover';
+@image-name: 'image';
+@image-x: 0px;
+@image-y: 831px;
+@image-offset-x: 0px;
+@image-offset-y: -831px;
+@image-width: 129px;
+@image-height: 129px;
+@image-total-width: 200px;
+@image-total-height: 960px;
+@image-image: '../img/sprite.png';
+@image: 0px 831px 0px -831px 129px 129px 200px 960px '../img/sprite.png' 'image';
+@music-hover-name: 'music--hover';
+@music-hover-x: 0px;
+@music-hover-y: 437px;
+@music-hover-offset-x: 0px;
+@music-hover-offset-y: -437px;
+@music-hover-width: 128px;
+@music-hover-height: 128px;
+@music-hover-total-width: 200px;
+@music-hover-total-height: 960px;
+@music-hover-image: '../img/sprite.png';
+@music-hover: 0px 437px 0px -437px 128px 128px 200px 960px '../img/sprite.png' 'music--hover';
+@music-name: 'music';
+@music-x: 0px;
+@music-y: 568px;
+@music-offset-x: 0px;
+@music-offset-y: -568px;
+@music-width: 128px;
+@music-height: 128px;
+@music-total-width: 200px;
+@music-total-height: 960px;
+@music-image: '../img/sprite.png';
+@music: 0px 568px 0px -568px 128px 128px 200px 960px '../img/sprite.png' 'music';
+@spritesheet-width: 200px;
+@spritesheet-height: 960px;
+@spritesheet-image: '../img/sprite.png';
+@spritesheet-sprites: @app-store @contacts-hover @contacts @email @google-play @image-hover @image @music-hover @music;
+@spritesheet: 200px 960px '../img/sprite.png' @spritesheet-sprites;
+
+
+// The provided classes are intended to be used with the array-like variables
+//
+// .icon-home {
+//   .sprite-width(@icon-home);
+// }
+// .icon-email {
+//   .sprite(@icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+
+.sprite-width(@sprite) {
+  width: extract(@sprite, 5);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 6);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: extract(@sprite, 9);
+  @sprite-image-bare: ~`"@{sprite-image}".slice(1, -1)`;
+  background-image: url(@sprite-image-bare);
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+
+// The `.sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of LESS
+//
+// This must be run when you have at least 2 sprites.
+//   If run with a single sprite, then there will be reference errors.
+//
+// .sprites(@spritesheet-sprites);
+
+.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: e(extract(@sprite, 10));
+  .@{sprite-name} {
+    .sprite(@sprite);
+  }
+  .sprites(@sprites, @i + 1);
+}
