@@ -1,0 +1,8 @@
+form.contact-form(action="/echo" method="post")
+  input.contact-form__input#first-name(type="text" name="first-name" placeholder="First Name" required)
+  input.contact-form__input#last-name(type="text" name="last-name" placeholder="Last Name" required)
+  input.contact-form__input#sender-email(type="email" name="sender-email" placeholder="Email Address" required)
+  //- TODO: разобраться, почему поле не проверяется по нажатию на кнопку "Submit"
+  input.contact-form__input#tel(type="tel" name="tel" placeholder="Tel. Number" required)
+  textarea.contact-form__message#message(placeholder="Comments" name="message" required)
+  button.btn.btn--contact(type="submit") Submit your message

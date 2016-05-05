@@ -8,9 +8,8 @@ var gulp = require("gulp"),
     csso = require("gulp-csso"),
     concat = require("gulp-concat"),
     uglify = require("gulp-uglify"),
-    prettify = require("gulp-prettify"),
     htmlmin = require("gulp-htmlmin"),
-    fileInclude = require("gulp-file-include"),
+    jade = require("gulp-jade"),
     imagemin = require("gulp-imagemin"),
     spritesmith = require("gulp.spritesmith"),
     plumber = require("gulp-plumber"),
@@ -22,21 +21,10 @@ var gulp = require("gulp"),
 
 // Создание разметки
 gulp.task("markup", function() {
-  return gulp.src(["source/*.html", "!source/_components-lib.html"])
-  // return gulp.src(["source/html/*.html", "!source/html/_components-lib.html"])
+  // return gulp.src(["source/*.html", "!source/_components-lib.html"])
+  return gulp.src(["source/jade/*.jade", "!source/jade/layout.jade"])
     .pipe(plumber())
-    // Cборка
-    // .pipe(fileInclude({
-    //   prefix: "@@",
-    //   basepath: "@file",
-    //   indent: true,
-    // }))
-    // Форматирование
-    // .pipe(prettify({
-    //   indent_char: " ",
-    //   indent_size: 2,
-    //   preserve_newlines: true
-    // }))
+    .pipe(jade({pretty: true}))
     .pipe(gulp.dest("build"))
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(rename({suffix: ".min"}))
@@ -127,8 +115,8 @@ gulp.task("build", function(callback) {
 // Отслеживание изменений в файлах
 gulp.task("watch", ["markup", "style", "script"], function() {
   livereload.listen();
-  gulp.watch("source/*.html", ["markup"]);
-  // gulp.watch("source/html/**/*.html", ["markup"]);
+  // gulp.watch("source/*.html", ["markup"]);
+  gulp.watch("source/jade/**/*.jade", ["markup"]);
   gulp.watch("source/less/**/*.less", ["style"]);
   gulp.watch("source/js/**/*.js", ["script", "vendor"]);
 });
