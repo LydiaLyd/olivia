@@ -1,12 +1,35 @@
 footer.page-footer
   .page-footer__center
     include contact.jade
-    include socials.jade
+    +socials([{
+      icon: "facebook",
+      href: "#",
+      hint: "We on Facebook"
+    }, {
+      icon: "twitter",
+      href: "#",
+      hint: "We on Twitter"
+    }, {
+      icon: "pinterest-circled",
+      href: "#",
+      hint: "We on Pinterest"
+    }, {
+      icon: "gplus",
+      href: "#",
+      hint: "We on Google+"
+    }, {
+      icon: "dribbble",
+      href: "#",
+      hint: "We on Dribbble"
+    }])
     .page-footer__copyright
       span.page-footer__text-separated © 2015 Copyright - Olivia
+      | 
       span.page-footer__text-separated Terms & Conditons
+      | 
       span.page-footer__text-separated Privacy Policy
+      | 
       span.page-footer__text-separated API License Agreement
-      //- TODO: должен быть пробел между перед ссылкой.
-      span.page-footer__text-separated Design by
+      | 
+      span.page-footer__text-separated Design by 
         a.page-footer__link(href="https://www.behance.net/srowar") Shahin Srowar

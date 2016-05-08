@@ -1,13 +1,112 @@
 section.support
   .support__center
     h1.support__heading Ask questions for Appliction Support
-    p.support__note
-      //- TODO: между строчными элементами должны быть пробелы.
-      //- TODO: разобраться, почему ничего не происходит по нажатию.
-      a.support__link(href="mailto:info@olivia.com") info@olivia.com
-      span.support__text-emphasis or
-      //- TODO: разобраться, почему ничего не происходит по нажатию.
-      a.support__link(href="tel:1-125-485-968") +01 125 485 968
+    p.support__note #[a.support__link(href="mailto:info@olivia.com") info@olivia.com] #[span.support__text-emphasis or] #[a.support__link(href="tel:1-125-485-968") +01 125 485 968]
     ul.support__list
-      //- TODO: думаю, это должен быть миксин, а не инклуд.
-      include assistant.jade
+      +assistant({name: "Micheal Rush", occupation: "Founder & CEO", imgSrc: "img/img_assistant-1.jpg"})
+        +socials([{
+          icon: "facebook",
+          href: "#",
+          hint: "Me on Facebook"
+        }, {
+          icon: "twitter",
+          href: "#",
+          hint: "Me on Twitter"
+        }, {
+          icon: "linkedin",
+          href: "#",
+          hint: "Me on Linkedin"
+        }, {
+          icon: "pinterest-circled",
+          href: "#",
+          hint: "Me on Pinterest"
+        }, {
+          icon: "gplus",
+          href: "#",
+          hint: "Me on Google+"
+        }, {
+          icon: "dribbble",
+          href: "#",
+          hint: "Me on Dribbble"
+        }])
+        
+      +assistant({name: "Paul McCartney", occupation: "Customer Relation Officer", imgSrc: "img/img_assistant-2.jpg"})
+        +socials([{
+          icon: "facebook",
+          href: "#",
+          hint: "Me on Facebook"
+        }, {
+          icon: "twitter",
+          href: "#",
+          hint: "Me on Twitter"
+        }, {
+          icon: "linkedin",
+          href: "#",
+          hint: "Me on Linkedin"
+        }, {
+          icon: "pinterest-circled",
+          href: "#",
+          hint: "Me on Pinterest"
+        }, {
+          icon: "gplus",
+          href: "#",
+          hint: "Me on Google+"
+        }, {
+          icon: "dribbble",
+          href: "#",
+          hint: "Me on Dribbble"
+        }])
+      
+      +assistant({name: "Louis Pasteur", occupation: "Sales Executive", imgSrc: "img/img_assistant-3.jpg"})
+        +socials([{
+          icon: "facebook",
+          href: "#",
+          hint: "Me on Facebook"
+        }, {
+          icon: "twitter",
+          href: "#",
+          hint: "Me on Twitter"
+        }, {
+          icon: "linkedin",
+          href: "#",
+          hint: "Me on Linkedin"
+        }, {
+          icon: "pinterest-circled",
+          href: "#",
+          hint: "Me on Pinterest"
+        }, {
+          icon: "gplus",
+          href: "#",
+          hint: "Me on Google+"
+        }, {
+          icon: "dribbble",
+          href: "#",
+          hint: "Me on Dribbble"
+        }])
+      
+      +assistant({name: "John Lennon", occupation: "Technical Executive", imgSrc: "img/img_assistant-4.jpg"})
+        +socials([{
+          icon: "facebook",
+          href: "#",
+          hint: "Me on Facebook"
+        }, {
+          icon: "twitter",
+          href: "#",
+          hint: "Me on Twitter"
+        }, {
+          icon: "linkedin",
+          href: "#",
+          hint: "Me on Linkedin"
+        }, {
+          icon: "pinterest-circled",
+          href: "#",
+          hint: "Me on Pinterest"
+        }, {
+          icon: "gplus",
+          href: "#",
+          hint: "Me on Google+"
+        }, {
+          icon: "dribbble",
+          href: "#",
+          hint: "Me on Dribbble"
+        }])

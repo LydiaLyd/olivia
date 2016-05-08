@@ -1,0 +1,70 @@
+//- items - array
+//- +nav([{text: "", href: "", current: true}, {text: "", href: ""}, {text: "", href: ""}])
+mixin nav(items)
+  ul.nav
+    each item in items
+      if item.current
+        li.nav__item
+          a.nav__link.nav__link--current(href=item.href)= item.text
+            span.nav__text-hidden Current
+      else
+        li.nav__item
+          a.nav__link(href=item.href)= item.text
+
+
+//- modifier - string
+//- +icon("modifier")
+mixin icon(modifier)
+  i(class="icon icon--" + modifier)
+  
+  
+//- items - array
+//- +socials([{icon: "", href: "", hint: ""}, {icon: "", href: "", hint: ""}, {icon: "", href: "", hint: ""}])
+mixin socials(items)
+  ul.socials
+    each item in items
+      li.socials__item
+        a.socials__link(href=item.href title=item.hint target="_blank")
+          +icon(item.icon)
+          span.socials__text-hidden= item.hint
+
+
+//- +slider()>block
+mixin slider()
+  .slider
+    if block
+      block
+
+
+//- imgSrc - string
+//- +screenshot(imgSrc)
+mixin screenshot(imgSrc)
+  .screenshot
+    img.screenshot__img(src=imgSrc width="264" height="467" alt="Screenshot")
+    .overlay
+      a.btn.btn--screenshot(href="#" title="Go to link") Go to link
+
+
+//- content - object
+//- +assistant({name: "", occupation: "", imgSrc: ""})
+mixin assistant(content)
+  li.assistant
+    .assistant__name= content.name
+    .assistant__occupation= content.occupation
+    p.assistant__descr Continually coordinate leveraged functional value. Holisticly target stand-alone action items with ethical
+    if block
+      block
+    img.assistant__img(src=content.imgSrc width="168" height="168" alt="Photo")
+
+
+//- content - object
+//- +post-preview({heading: "", lead: "", date: "", day: "", monthAndYear: ""})
+mixin post-preview(content)
+  article.post-preview
+    h2.post-preview__heading= content.heading
+    p.post-preview__lead= content.lead
+    a.post-preview__link(href="#")
+      +icon("globe")
+      | http://srowar.com/lowerbacklink
+    .pubdate
+      time(datetime=content.date) #[span.pubdate__day= content.day] #[= content.monthAndYear]

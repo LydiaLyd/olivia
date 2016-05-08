@@ -1,3 +1,22 @@
 nav.navbar
   include logo.jade
-  include nav.jade
+  +nav([{
+    text: "Home",
+    href: "#intro",
+    current: true
+  }, {
+    text: "Features",
+    href: "#features"
+  }, {
+    text: "Testimonials",
+    href: "#testimonials"
+  }, {
+    text: "Blog",
+    href: "#blog-preview"
+  }, {
+    text: "Newsletter",
+    href: "#subscribe"
+  }, {
+    text: "Contact",
+    href: "#contact"
+  }])

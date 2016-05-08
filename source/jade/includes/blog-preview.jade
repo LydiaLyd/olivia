@@ -1,138 +1,100 @@
 section.blog-preview
   h1.blog-preview__heading Olivia Blog Post
-  //- TODO: вынести в отдельный блок.
-  .slider
+  +slider()
     .slide
-      //- TODO: вынести в отдельный блок.
-      article.post-preview
-        h2.post-preview__heading Extremely we promotion remainder
-        p.post-preview__lead Comfort reached gay perhaps chamber his six detract besides add. Moonlight newspaper up he it enjoyment agreeable.
-        a.post-preview__link(href="#")
-          i.icon.icon--globe
-          | http://srowar.com/lowerbacklink
-        .pubdate
-          time(datetime="2015-03-24")
-            span.pubdate__day 24
-            | Mar 2015
+      +post-preview({
+        heading: "Extremely we promotion remainder",
+        lead: "Comfort reached gay perhaps chamber his six detract besides add. Moonlight newspaper up he it enjoyment agreeable.",
+        date: "2015-03-24",
+        day: "24",
+        monthAndYear: "Mar 2015"
+      })
       
-      article.post-preview
-        h2.post-preview__heading Seamlessly orchestrate highly efficient
-        p.post-preview__lead Extremely we promotion remainder eagerness enjoyment an. Ham her demands removal brought minuter raising invited gay.
-        a.post-preview__link(href="#")
-          i.icon.icon--globe
-          | http://srowar.com/lowerbacklink
-        .pubdate
-          time(datetime="2015-03-25")
-            span.pubdate__day 25
-            | Mar 2015
-
-      article.post-preview
-        h2.post-preview__heading Efficiently deploy corporate global
-        p.post-preview__lead Two assure edward whence the was. Who worthy yet ten boy denote wonder. Weeks views her sight old tears sorry.
-        a.post-preview__link(href="#")
-          i.icon.icon--globe
-          | http://srowar.com/lowerbacklink
-        .pubdate
-          time(datetime="2015-03-26")
-            span.pubdate__day 26
-            | Mar 2015
+      +post-preview({
+        heading: "Seamlessly orchestrate highly efficient",
+        lead: "Extremely we promotion remainder eagerness enjoyment an. Ham her demands removal brought minuter raising invited gay.",
+        date: "2015-03-25",
+        day: "25",
+        monthAndYear: "Mar 2015"
+      })
       
-      article.post-preview
-        h2.post-preview__heading Extremely we promotion remainder
-        p.post-preview__lead Comfort reached gay perhaps chamber his six detract besides add. Moonlight newspaper up he it enjoyment agreeable.
-        a.post-preview__link(href="#")
-          i.icon.icon--globe
-          | http://srowar.com/lowerbacklink
-        .pubdate
-          time(datetime="2015-06-02")
-            span.pubdate__day 02
-            | June 2015
+      +post-preview({
+        heading: "Efficiently deploy corporate global",
+        lead: "Two assure edward whence the was. Who worthy yet ten boy denote wonder. Weeks views her sight old tears sorry.",
+        date: "2015-03-26",
+        day: "26",
+        monthAndYear: "Mar 2015"
+      })
       
-      article.post-preview
-        h2.post-preview__heading Seamlessly orchestrate highly efficient
-        p.post-preview__lead Extremely we promotion remainder eagerness enjoyment an. Ham her demands removal brought minuter raising invited gay.
-        a.post-preview__link(href="#")
-          i.icon.icon--globe
-          | http://srowar.com/lowerbacklink
-        .pubdate
-          time(datetime="2015-06-06")
-            span.pubdate__day 06
-            | June 2015
+      +post-preview({
+        heading: "Extremely we promotion remainder",
+        lead: "Comfort reached gay perhaps chamber his six detract besides add. Moonlight newspaper up he it enjoyment agreeable.",
+        date: "2015-06-02",
+        day: "02",
+        monthAndYear: "June 2015"
+      })
       
-      article.post-preview
-        h2.post-preview__heading Efficiently deploy corporate global
-        p.post-preview__lead Two assure edward whence the was. Who worthy yet ten boy denote wonder. Weeks views her sight old tears sorry.
-        a.post-preview__link(href="#")
-          i.icon.icon--globe
-          | http://srowar.com/lowerbacklink
-        .pubdate
-          time(datetime="2015-06-08")
-            span.pubdate__day 08
-            | June 2015
+      +post-preview({
+        heading: "Seamlessly orchestrate highly efficient",
+        lead: "Extremely we promotion remainder eagerness enjoyment an. Ham her demands removal brought minuter raising invited gay.",
+        date: "2015-06-06",
+        day: "06",
+        monthAndYear: "June 2015"
+      })
+      
+      +post-preview({
+        heading: "Efficiently deploy corporate global",
+        lead: "Two assure edward whence the was. Who worthy yet ten boy denote wonder. Weeks views her sight old tears sorry.",
+        date: "2015-06-08",
+        day: "08",
+        monthAndYear: "June 2015"
+      })
 
     .slide
-      article.post-preview
-        h2.post-preview__heading Extremely we promotion remainder
-        p.post-preview__lead Comfort reached gay perhaps chamber his six detract besides add. Moonlight newspaper up he it enjoyment agreeable.
-        a.post-preview__link(href="#")
-          i.icon.icon--globe
-          | http://srowar.com/lowerbacklink
-        .pubdate
-          time(datetime="2015-03-24")
-            span.pubdate__day 24
-            | Mar 2015
+      +post-preview({
+        heading: "Extremely we promotion remainder",
+        lead: "Comfort reached gay perhaps chamber his six detract besides add. Moonlight newspaper up he it enjoyment agreeable.",
+        date: "2015-03-24",
+        day: "24",
+        monthAndYear: "Mar 2015"
+      })
       
-      article.post-preview
-        h2.post-preview__heading Seamlessly orchestrate highly efficient
-        p.post-preview__lead Extremely we promotion remainder eagerness enjoyment an. Ham her demands removal brought minuter raising invited gay.
-        a.post-preview__link(href="#")
-          i.icon.icon--globe
-          | http://srowar.com/lowerbacklink
-        .pubdate
-          time(datetime="2015-03-25")
-            span.pubdate__day 25
-            | Mar 2015
-
-      article.post-preview
-        h2.post-preview__heading Efficiently deploy corporate global
-        p.post-preview__lead Two assure edward whence the was. Who worthy yet ten boy denote wonder. Weeks views her sight old tears sorry.
-        a.post-preview__link(href="#")
-          i.icon.icon--globe
-          | http://srowar.com/lowerbacklink
-        .pubdate
-          time(datetime="2015-03-26")
-            span.pubdate__day 26
-            | Mar 2015
+      +post-preview({
+        heading: "Seamlessly orchestrate highly efficient",
+        lead: "Extremely we promotion remainder eagerness enjoyment an. Ham her demands removal brought minuter raising invited gay.",
+        date: "2015-03-25",
+        day: "25",
+        monthAndYear: "Mar 2015"
+      })
       
-      article.post-preview
-        h2.post-preview__heading Extremely we promotion remainder
-        p.post-preview__lead Comfort reached gay perhaps chamber his six detract besides add. Moonlight newspaper up he it enjoyment agreeable.
-        a.post-preview__link(href="#")
-          i.icon.icon--globe
-          | http://srowar.com/lowerbacklink
-        .pubdate
-          time(datetime="2015-06-02")
-            span.pubdate__day 02
-            | June 2015
+      +post-preview({
+        heading: "Efficiently deploy corporate global",
+        lead: "Two assure edward whence the was. Who worthy yet ten boy denote wonder. Weeks views her sight old tears sorry.",
+        date: "2015-03-26",
+        day: "26",
+        monthAndYear: "Mar 2015"
+      })
       
-      article.post-preview
-        h2.post-preview__heading Seamlessly orchestrate highly efficient
-        p.post-preview__lead Extremely we promotion remainder eagerness enjoyment an. Ham her demands removal brought minuter raising invited gay.
-        a.post-preview__link(href="#")
-          i.icon.icon--globe
-          | http://srowar.com/lowerbacklink
-        .pubdate
-          time(datetime="2015-06-06")
-            span.pubdate__day 06
-            | June 2015
+      +post-preview({
+        heading: "Extremely we promotion remainder",
+        lead: "Comfort reached gay perhaps chamber his six detract besides add. Moonlight newspaper up he it enjoyment agreeable.",
+        date: "2015-06-02",
+        day: "02",
+        monthAndYear: "June 2015"
+      })
       
-      article.post-preview
-        h2.post-preview__heading Efficiently deploy corporate global
-        p.post-preview__lead Two assure edward whence the was. Who worthy yet ten boy denote wonder. Weeks views her sight old tears sorry.
-        a.post-preview__link(href="#")
-          i.icon.icon--globe
-          | http://srowar.com/lowerbacklink
-        .pubdate
-          time(datetime="2015-06-08")
-            span.pubdate__day 08
-            | June 2015
+      +post-preview({
+        heading: "Seamlessly orchestrate highly efficient",
+        lead: "Extremely we promotion remainder eagerness enjoyment an. Ham her demands removal brought minuter raising invited gay.",
+        date: "2015-06-06",
+        day: "06",
+        monthAndYear: "June 2015"
+      })
+      
+      +post-preview({
+        heading: "Efficiently deploy corporate global",
+        lead: "Two assure edward whence the was. Who worthy yet ten boy denote wonder. Weeks views her sight old tears sorry.",
+        date: "2015-06-08",
+        day: "08",
+        monthAndYear: "June 2015"
+      })

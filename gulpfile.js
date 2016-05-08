@@ -10,6 +10,7 @@ var gulp = require("gulp"),
     uglify = require("gulp-uglify"),
     htmlmin = require("gulp-htmlmin"),
     jade = require("gulp-jade"),
+    htmlcomb = require('gulp-htmlcomb'),
     imagemin = require("gulp-imagemin"),
     spritesmith = require("gulp.spritesmith"),
     plumber = require("gulp-plumber"),
@@ -22,9 +23,10 @@ var gulp = require("gulp"),
 // Создание разметки
 gulp.task("markup", function() {
   // return gulp.src(["source/*.html", "!source/_components-lib.html"])
-  return gulp.src(["source/jade/*.jade", "!source/jade/layout.jade"])
+  return gulp.src(["source/jade/*.jade", "!source/jade/layout.jade", "!source/jade/mixins.jade"])
     .pipe(plumber())
     .pipe(jade({pretty: true}))
+    .pipe(htmlcomb())
     .pipe(gulp.dest("build"))
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(rename({suffix: ".min"}))
