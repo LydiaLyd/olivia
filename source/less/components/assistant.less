@@ -1,0 +1,63 @@
+.assistant {
+  position: relative;
+  width: 525px;
+  padding-right: 230px;
+  line-height: 24px;
+  text-align: right;
+
+  &:nth-child(even) {
+    padding-right: 0;
+    padding-left: 230px;
+    text-align: left;
+  }
+  &:nth-child(n+3) {
+    margin-top: 70px;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  &__lastname {
+    text-transform: uppercase;
+  }
+
+  &__occupation {
+    margin-bottom: 14px;
+  }
+
+  &__descr {
+    margin-top: 16px;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    padding-left: 7%;
+    border-top: 1px solid @blue-26;
+  }
+  &:nth-child(even) &__descr {
+    padding-left: 0;
+    padding-right: 7%;
+  }
+
+  &__wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px;
+    background: @purple-50 linear-gradient(to right, @purple-50, @blue-60) no-repeat;
+    border-radius: 50%;
+  }
+  &:nth-child(even) &__wrap {
+    right: auto;
+    left: 0;
+  }
+
+  &__img {
+    display: inline-block;
+    vertical-align: top;
+    width: 168px;
+    height: 168px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px #fff;
+  }
+}

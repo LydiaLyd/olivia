@@ -1,3 +1,32 @@
 .page-footer {
-  
+  text-align: center;
+  color: #fff;
+  background: @purple-63 linear-gradient(to right, @purple-63, @blue-70) center no-repeat;
+  background-size: 2024px 804px;
+
+  &__center {
+    width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 40px;
+  }
+
+  &__copyright {
+    line-height: 22px;
+  }
+
+  &__text-separated:not(:last-child) {
+    margin-right: 16px;
+  }
+
+  &__link {
+    .link-reset;
+    transition: color .15s;
+  }
+  &__link:hover {
+    color: @purple-50;
+  }
+  &__link:active {
+    color: fade(@purple-50, 50%);
+  }
 }

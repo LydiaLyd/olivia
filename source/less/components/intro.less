@@ -1,0 +1,66 @@
+.intro {
+  color: #fff;
+  background: @purple-63 url(../img/bg_intro.jpg) center top no-repeat;
+
+  &__center {
+    display: flex;
+    width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 252px;
+    padding-bottom: 65px;
+  }
+
+  &__img {
+    display: block;
+    width: 530px;
+    height: 673px;
+    margin-right: 70px;
+  }
+
+  &__text-wrap {
+    width: 545px;
+    padding-top: 100px;
+  }
+
+  &__heading {
+    margin-top: 0;
+    margin-bottom: 32px;
+    font-size: 60px;
+    line-height: 72px;
+    text-shadow: 1px 1.7px 0 fade(#000, 35%);
+    color: inherit;
+  }
+
+  &__text {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  &__emphasis {
+    display: block;
+    margin-top: 53px;
+    margin-bottom: 34px;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 28px;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0;
+    transition: opacity .15s;
+  }
+  &__link[title="Download from App Store"] {
+    margin-right: 30px;
+    .sprite(@app-store);
+  }
+  &__link[title="Download from Google Play"] {
+    .sprite(@google-play);
+  }
+  &__link:active {
+    opacity: .5;
+  }
+}

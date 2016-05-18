@@ -1,0 +1,15 @@
+.posts {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+  height: 423px;
+  .ul-reset;
+
+  &__item {
+    width: 520px;
+  }
+  &__item:not(:nth-child(3n)) {
+    margin-bottom: 63px;
+  }
+}

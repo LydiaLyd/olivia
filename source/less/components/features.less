@@ -1,0 +1,70 @@
+.features {
+  text-align: center;
+  background: #fff url(../img/bg_features.jpg) center top no-repeat;
+
+  &__center {
+    width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 105px;
+    padding-bottom: 110px;
+  }
+
+  &__heading {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 84px;
+  }
+
+  &__text {
+    width: 1135px;
+    margin-top: 25px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 110px;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__item {
+    flex: 1 1 295px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  &__item:not(:nth-child(3n)) {
+    margin-right: 30px;
+  }
+
+  .icon {
+    vertical-align: top;
+  }
+  &__item:first-child:hover .icon--contacts {
+    .sprite-position(@contacts-hover);
+  }
+  &__item:nth-child(2):hover .icon--music {
+    .sprite-position(@music-hover);
+  }
+  &__item:last-child:hover .icon--image {
+    .sprite-position(@image-hover);
+  }
+
+  &__name {
+    margin-top: 33px;
+    margin-bottom: 32px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  &__descr {
+    margin-bottom: 0;
+  }
+}

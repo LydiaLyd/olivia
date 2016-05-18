@@ -18,20 +18,28 @@ mixin icon(modifier)
   i(class="icon icon--" + modifier)
   
   
-//- items - array
-//- +socials([{icon: "", href: "", hint: ""}, {icon: "", href: "", hint: ""}, {icon: "", href: "", hint: ""}])
-mixin socials(items)
-  ul.socials
-    each item in items
-      li.socials__item
-        a.socials__link(href=item.href title=item.hint target="_blank")
-          +icon(item.icon)
-          span.socials__text-hidden= item.hint
+//- items - array, modifier - string
+//- +socials([{icon: "", href: "", hint: ""}, {icon: "", href: "", hint: ""}, {icon: "", href: "", hint: ""}], "")
+mixin socials(items, modifier)
+  if modifier
+    ul(class="socials socials--" + modifier)
+      each item in items
+        li(class="socials__item socials__item--" + modifier)
+          a(class="socials__link socials__link--" + modifier href=item.href title=item.hint target="_blank")
+            +icon(item.icon)
+            span.socials__text-hidden= item.hint
+  else  
+    ul.socials
+      each item in items
+        li.socials__item
+          a.socials__link(href=item.href title=item.hint target="_blank")
+            +icon(item.icon)
+            span.socials__text-hidden= item.hint
 
 
 //- +slider()>block
-mixin slider()
-  .slider
+mixin slider(modifier)
+  div(class="slider slider--" + modifier)
     if block
       block
 
@@ -41,20 +49,32 @@ mixin slider()
 mixin screenshot(imgSrc)
   .screenshot
     img.screenshot__img(src=imgSrc width="264" height="467" alt="Screenshot")
-    .overlay
+    .screenshot__overlay
       a.btn.btn--screenshot(href="#" title="Go to link") Go to link
 
 
 //- content - object
-//- +assistant({name: "", occupation: "", imgSrc: ""})
+//- +testimonial({text: "", author: ["", ""], occupation: "", imgSrc: ""})
+mixin testimonial(content)
+  blockquote.testimonial
+    p.testimonial__text= content.text
+    .testimonial__author #[= content.author[0]] #[span.testimonial__emphasis= content.author[1]]
+    .testimonial__occupation= content.occupation
+    .testimonial__wrap
+      img.testimonial__photo(src=content.imgSrc width="199" height="199" alt="Photo")
+
+
+//- content - object
+//- +assistant({name: ["", ""], occupation: "", imgSrc: ""})
 mixin assistant(content)
   li.assistant
-    .assistant__name= content.name
+    .assistant__name #[= content.name[0]] #[span.assistant__lastname= content.name[1]]
     .assistant__occupation= content.occupation
     p.assistant__descr Continually coordinate leveraged functional value. Holisticly target stand-alone action items with ethical
     if block
       block
-    img.assistant__img(src=content.imgSrc width="168" height="168" alt="Photo")
+    .assistant__wrap
+      img.assistant__img(src=content.imgSrc width="168" height="168" alt="Photo")
 
 
 //- content - object
@@ -66,5 +86,8 @@ mixin post-preview(content)
     a.post-preview__link(href="#")
       +icon("globe")
       | http://srowar.com/lowerbacklink
-    .pubdate
-      time(datetime=content.date) #[span.pubdate__day= content.day] #[= content.monthAndYear]
+    +pubdate(content.date, content.day, content.monthAndYear)
+
+mixin pubdate(date, day, monthAndYear)
+  .pubdate
+    time(datetime=date) #[span.pubdate__day= day] #[= monthAndYear]

@@ -1,0 +1,38 @@
+.pubdate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 79px;
+  padding: 10px 10px 8px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  background-color: @purple-50;
+  transition: background-color .15s;
+
+  .post-preview:hover & {
+    background-color: @blue-60;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: -7px;
+    width: 15px;
+    height: 15px;
+    background-color: inherit;
+    transform: rotate(45deg);
+  }
+
+  &__day {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1;
+  }
+}

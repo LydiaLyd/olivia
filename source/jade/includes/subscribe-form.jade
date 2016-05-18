@@ -1,3 +1,5 @@
 form.subscribe-form(action="/echo" method="post")
-  input.subscribe-form__input#subscriber-email(type="email" name="subscriber-email" placeholder="Enter your e-mail" required)
+  .subscribe-form__wrap
+    +icon("email")
+    input.subscribe-form__input#subscriber-email(type="email" name="subscriber-email" placeholder="Enter your e-mail" required)
   button.btn.btn--subscribe(type="submit") Subscribe

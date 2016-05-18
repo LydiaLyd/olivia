@@ -1,0 +1,22 @@
+.screenshot {
+  position: relative;
+  &__img {
+    display: inline-block;
+    vertical-align: top;
+    width: 264px;
+    height: 467px;
+  }
+
+  &__overlay {
+    .cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent linear-gradient(to bottom, fade(@blue-60, 78%), fade(@purple-50, 78%)) no-repeat;
+    opacity: 0;
+    transition: opacity .15s;
+  }
+  &:hover &__overlay {
+    opacity: 1;
+  }
+}

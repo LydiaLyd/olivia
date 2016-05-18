@@ -1,0 +1,39 @@
+.post-preview {
+  position: relative;
+  padding-left: 100px;
+  font-size: 14px;
+  line-height: normal;
+
+  &__heading {
+    margin-top: 0;
+    margin-bottom: 9px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    text-transform: uppercase;
+  }
+
+  &__lead {
+    margin-top: 9px;
+    margin-bottom: 2px;
+    line-height: 24px;
+  }
+
+  &__link {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 20px;
+    .link-reset;
+    transition: color .15s
+  }
+  &__link:hover {
+    color: @purple-50;
+  }
+  &__link:active {
+    color: fade(@purple-50, 50%);
+  }
+
+  .icon {
+    margin-right: 17px;
+  }
+}

@@ -6,9 +6,97 @@
   outline: none;
   transition:
     color .15s,
-    background-color .15s;
+    background-color .15s,
+    border-color .15s,
+    box-shadow .15s;
 
-  &--modifier {
+  &--screenshot {
+    position: relative;
+    width: 53px;
+    height: 53px;
+    font-size: 0;
+    vertical-align: top;
+    background-color: white;
+    border-radius: 50%;
+  }
+  &--screenshot::before,
+  &--screenshot::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 23px;
+    height: 2px;
+    margin-top: -1px;
+    margin-left: -12px;
+    background-color: @purple-50;
+    transition: background-color .15s;
+  }
+  &--screenshot::after {
+    transform: rotate(90deg);
+  }
+  &--screenshot:hover {
+    background-color: @purple-50;
+  }
+  &--screenshot:hover::before,
+  &--screenshot:hover::after {
+    background-color: #fff;
+  }
+  &--screenshot:active {
+    background-color: fade(@purple-50, 50%);
+  }
+  &--screenshot:active::before,
+  &--screenshot:active::after {
+    background-color: fade(#fff, 50%);
+  }
 
+  &--subscribe {
+    width: 166px;
+    padding: 13px 20px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    background-color: @purple-50;
+    border: 2px solid @purple-50;
+    border-radius: 4px;
+  }
+  &--subscribe:hover,
+  &--subscribe:active {
+    background-color: @blue-60;
+    border-color: #fff;
+  }
+  &--subscribe:active {
+    color: fade(#fff, 50%);
+  }
+
+  &--contact {
+    position: absolute;
+    bottom: 0 + 2px;
+    left: 50%;
+    width: 536px - 4px;
+    margin-left: -268px - 2;
+    padding: 10px 25px;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: @purple-50;
+    border: 2px solid @purple-50;
+    border: none;
+    box-shadow:
+      0 0 0 2px @purple-50,
+      -14px -14px 0 -10px #fff,
+      14px -14px 0 -10px #fff,
+  }
+  &--contact:hover,
+  &--contact:active {
+    background-color: @blue-60;
+    box-shadow:
+      0 0 0 2px #fff,
+      -14px -14px 0 -10px transparent,
+      14px -14px 0 -10px transparent,
+  }
+  &--contact:active {
+    color: fade(#fff, 50%);
   }
 }

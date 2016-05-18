@@ -1,0 +1,41 @@
+.subscribe-form {
+  margin-top: 50px;
+  font-size: 0;
+
+  &__wrap {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .icon {
+    position: absolute;
+    top: 15px;
+    left: 16px;
+  }
+
+  &__input {
+    width: 418px;
+    margin-right: 11px;
+    padding: 0 30px 0 60px;
+    font-size: 18px;
+    line-height: 50px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 4px;
+    outline: none;
+    transition: background-color .15s;
+  }
+
+  // TODO: разобраться, почему не работает.
+  &__input::-moz-placeholder { color: inherit; }
+  &__input::-webkit-input-placeholder { color: inherit; }
+  &__input:-ms-input-placeholder { color: inherit; }
+  &__input::-ms-input-placeholder { color: inherit; }
+  &__input::placeholder { color: inherit; }
+
+  &__input:hover,
+  &__input:focus {
+    background-color: @purple-50;
+  }
+}
