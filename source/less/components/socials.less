@@ -1,8 +1,9 @@
 .socials {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-top: 0;
-  margin-bottom: 40px;
+  margin-bottom: 39px;
   padding-left: 0;
   list-style: none;
 
@@ -10,12 +11,10 @@
     justify-content: flex-start;
     margin-bottom: 0;
   }
-  .assistant:nth-child(odd) &--assistant {
-    justify-content: flex-end;
-  }
 
-  &__item:not(:last-child) {
-    margin-right: 32px;
+  &__item {
+    margin-right: 4px;
+    margin-left: 4px;
   }
   &__item--assistant:not(:last-child) {
     margin-right: 16px;
@@ -64,5 +63,32 @@
 
   &__text-hidden {
     display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .socials {
+    width: 500px;
+    margin-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto;
+
+    &--assistant {
+      width: auto;
+    }
+    .assistant:nth-child(odd) &--assistant {
+      justify-content: flex-end;
+    }
+
+    &__item {
+      margin-right: 16px;
+      margin-left: 16px;
+    }
+    .assistant:nth-child(odd) &__item--assistant:last-child {
+      margin-right: 0;
+    }
+    .assistant:nth-child(even) &__item--assistant:first-child {
+      margin-left: 0;
+    }
   }
 }

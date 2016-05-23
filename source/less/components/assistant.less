@@ -1,22 +1,14 @@
 .assistant {
   position: relative;
-  width: 525px;
-  padding-right: 230px;
-  line-height: 24px;
-  text-align: right;
+  padding-top: 205px;
 
-  &:nth-child(even) {
-    padding-right: 0;
-    padding-left: 230px;
-    text-align: left;
-  }
-  &:nth-child(n+3) {
-    margin-top: 70px;
+  &:not(:last-child) {
+    margin-bottom: 39px;
   }
 
   &__name {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   &__lastname {
@@ -24,32 +16,24 @@
   }
 
   &__occupation {
-    margin-bottom: 14px;
+    margin-bottom: 13px;
   }
 
   &__descr {
-    margin-top: 16px;
-    margin-bottom: 20px;
+    margin-top: 13px;
+    margin-bottom: 13px;
     padding-top: 15px;
-    padding-left: 7%;
     border-top: 1px solid @blue-26;
-  }
-  &:nth-child(even) &__descr {
-    padding-left: 0;
-    padding-right: 7%;
   }
 
   &__wrap {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 50%;
+    margin-left: -96px;
     padding: 12px;
     background: @purple-50 linear-gradient(to right, @purple-50, @blue-60) no-repeat;
     border-radius: 50%;
-  }
-  &:nth-child(even) &__wrap {
-    right: auto;
-    left: 0;
   }
 
   &__img {
@@ -59,5 +43,55 @@
     height: 168px;
     border-radius: 50%;
     box-shadow: 0 0 0 8px #fff;
+  }
+}
+
+@media (min-width: 768px) {
+  .assistant {
+    width: 525px;
+    padding-top: 0;
+    padding-right: 230px;
+    line-height: 24px;
+    text-align: right;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+    &:nth-child(even) {
+      padding-right: 0;
+      padding-left: 230px;
+      text-align: left;
+    }
+    &:nth-child(n+3) {
+      margin-top: 70px;
+    }
+
+    &__name {
+      font-size: 18px;
+    }
+
+    &__occupation {
+      margin-bottom: 15px;
+    }
+
+    &__descr {
+      margin-top: 15px;
+      margin-bottom: 20px;
+      padding-left: 7%;
+    }
+    &:nth-child(even) &__descr {
+      padding-left: 0;
+      padding-right: 7%;
+    }
+
+    &__wrap {
+      right: 0;
+      left: auto;
+      margin-left: auto;
+    }
+    &:nth-child(even) &__wrap {
+      right: auto;
+      left: 0;
+    }
   }
 }

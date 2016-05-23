@@ -1,15 +1,31 @@
 .posts {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-content: space-between;
-  height: 423px;
   .ul-reset;
 
   &__item {
-    width: 520px;
+
   }
-  &__item:not(:nth-child(3n)) {
-    margin-bottom: 63px;
+  &__item:not(:last-child) {
+    margin-bottom: 26px;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .posts {
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 423px;
+
+    &__item {
+      width: 520px;
+    }
+    &__item:not(:nth-child(3n)) {
+      margin-bottom: 63px;
+    }
+    &__item:nth-child(3n) {
+      margin-bottom: 0;
+    }
   }
 }

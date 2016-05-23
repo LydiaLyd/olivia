@@ -12,8 +12,8 @@
 
   &--screenshot {
     position: relative;
-    width: 53px;
-    height: 53px;
+    width: 54px;
+    height: 54px;
     font-size: 0;
     vertical-align: top;
     background-color: white;
@@ -25,7 +25,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 23px;
+    width: 24px;
     height: 2px;
     margin-top: -1px;
     margin-left: -12px;
@@ -71,32 +71,44 @@
   }
 
   &--contact {
-    position: absolute;
-    bottom: 0 + 2px;
-    left: 50%;
-    width: 536px - 4px;
-    margin-left: -268px - 2;
     padding: 10px 25px;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     text-transform: uppercase;
     background-color: @purple-50;
     border: 2px solid @purple-50;
-    border: none;
-    box-shadow:
-      0 0 0 2px @purple-50,
-      -14px -14px 0 -10px #fff,
-      14px -14px 0 -10px #fff,
   }
   &--contact:hover,
   &--contact:active {
     background-color: @blue-60;
-    box-shadow:
-      0 0 0 2px #fff,
-      -14px -14px 0 -10px transparent,
-      14px -14px 0 -10px transparent,
+    border-color: #fff;
   }
   &--contact:active {
     color: fade(#fff, 50%);
+  }
+}
+
+@media (min-width: 768px) {
+  .btn {
+    &--contact {
+      position: absolute;
+      bottom: 0 + 2px;
+      left: 50%;
+      width: 536px - 4px;
+      margin-left: -268px - 2;
+      font-size: 18px;
+      border: none;
+      box-shadow:
+        0 0 0 2px @purple-50,
+        -14px -14px 0 -10px #fff,
+        14px -14px 0 -10px #fff,
+    }
+    &--contact:hover,
+    &--contact:active {
+      box-shadow:
+        0 0 0 2px #fff,
+        -14px -14px 0 -10px transparent,
+        14px -14px 0 -10px transparent,
+    }
   }
 }

@@ -1,14 +1,27 @@
 .blog-preview {
-  padding-top: 115px;
-  padding-bottom: 106px;
-  background: #fff fixed url(../img/bg_blog-preview.jpg) center top no-repeat;
+  padding-top: 36px;
+  padding-bottom: 36px;
 
   &__heading {
     margin-top: 0;
-    margin-bottom: 105px;
+    margin-bottom: 36px;
     font-weight: 600;
-    font-size: 60px;
-    line-height: 72px;
+    font-size: 30px;
+    line-height: 36px;
     text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .blog-preview {
+    padding-top: 115px;
+    padding-bottom: 106px;
+    background: #fff fixed url(../img/bg_blog-preview.jpg) center top no-repeat;
+
+    &__heading {
+      margin-bottom: 105px;
+      font-size: 60px;
+      line-height: 72px;
+    }
   }
 }

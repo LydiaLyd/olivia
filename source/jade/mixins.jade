@@ -81,7 +81,7 @@ mixin assistant(content)
 //- +post-preview({heading: "", lead: "", date: "", day: "", monthAndYear: ""})
 mixin post-preview(content)
   article.post-preview
-    h2.post-preview__heading= content.heading
+    h2.post-preview__heading: a.post-preview__heading-link(href="#")= content.heading
     p.post-preview__lead= content.lead
     a.post-preview__link(href="#")
       +icon("globe")

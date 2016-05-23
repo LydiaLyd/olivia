@@ -1,5 +1,41 @@
 .slider {
-  width: 1170px;
+
   margin-right: auto;
   margin-left: auto;
+
+  &--screenshots {
+    width: 264px;
+  }
+  &--testimonials {
+    padding-bottom: 41px;
+  }
+  &--blog-preview {
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width: 573px) {
+  .slider {
+    width: 543px;
+
+    &--screenshots {
+      padding-bottom: 40px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .slider {
+    width: 1146px;
+
+    &--screenshots {
+      padding-bottom: 50px;
+    }
+    &--testimonials {
+      padding-bottom: 110px;
+    }
+    &--blog-preview {
+      padding-bottom: 68px;
+    }
+  }
 }

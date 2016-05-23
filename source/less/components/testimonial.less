@@ -1,17 +1,13 @@
 .testimonial {
-  position: relative;
   margin: 0;
-  padding-top: 20px;
-  padding-left: 260px;
+  padding-top: 225px;
 
   &__text {
     position: relative;
-    width: 820px;
+    width: 100%;
     margin-top: 0;
-    margin-bottom: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 40px;
+    margin-bottom: 16px;
+    padding: 10px 40px;
   }
   &__text::before,
   &__text::after {
@@ -23,17 +19,23 @@
   }
   &__text::before {
     top: 0;
-    left: 0;
+    left: 7px;
   }
   &__text::after {
     bottom: 0;
-    left: 440px;
+    right: 7px;
     transform: rotate(180deg);
   }
 
-  &__author {
+  &__author,
+  &__occupation {
     padding-left: 40px;
-    font-size: 18px;
+    padding-right: 40px;
+    text-align: center;
+  }
+
+  &__author {
+    font-size: 16px;
   }
 
   &__emphasis {
@@ -41,15 +43,16 @@
   }
 
   &__occupation {
-    padding-left: 40px;
+
   }
 
   &__wrap {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
     width: 209px;
     height: 209px;
+    margin-left: -104px;
     border: 5px solid #fff;
     border-radius: 50%;
     overflow: hidden;
@@ -58,5 +61,51 @@
   &__photo {
     width: 199px;
     height: 199px;
+  }
+}
+
+@media (min-width: 768px) {
+  .testimonial {
+    position: relative;
+    padding-top: 20px;
+    padding-left: 260px;
+
+    &__text {
+      width: 820px;
+      margin-bottom: 20px;
+      padding-right: 0;
+      text-align: left;
+    }
+    &__text::before {
+      left: 0;
+    }
+    &__text::after {
+      right: auto;
+      left: 440px;
+    }
+
+    &__author,
+    &__occupation {
+      padding-right: 0;
+      text-align: left;
+    }
+
+    &__author {
+      font-size: 18px;
+      text-align: left;
+    }
+
+    &__emphasis {
+
+    }
+
+    &__occupation {
+      text-align: left;
+    }
+
+    &__wrap {
+      margin-left: auto;
+      left: 0;
+    }
   }
 }

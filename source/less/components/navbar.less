@@ -1,10 +1,109 @@
 .navbar {
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  width: 1170px;
+  position: fixed;
+  z-index: @z-index_navbar;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: -585px;
+  width: 100%;
+  padding: 10px;
+  background-color: @purple-50;
+  // pseudo plank
+  &::before {
+    content: "pseudo plank";
+    .cover;
+    z-index: @z-index_navbar-pseudo-plank;
+    font-size: 0;
+    background-color: inherit;
+    box-shadow: 0 5px 5px 0 rgba(84,20,109,.5);
+  }
+
+  &__toggle {
+    position: relative;
+    z-index: @z_index_nav-toggle;
+    display: block;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    font-size: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+
+  &__toggle-lines {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    pointer-events: none;
+    transition: background-color 0s .3s;
+  }
+  &__toggle-lines::before,
+  &__toggle-lines::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: inherit;
+    background-color: #fff;
+    pointer-events: none;
+  }
+  // Не получилось использовать transition-property, transition-duration, transition-delay.
+  // Из-за автопрефиксера трансформации работали неправильно.
+  // Или же из-за моих кривых рук.
+  &__toggle-lines::before {
+    top: -15px;
+    transition:
+      top .3s .3s,
+      transform .3s .0s;
+  }
+  &__toggle-lines::after {
+    bottom: -15px;
+    transition:
+      bottom .3s .3s,
+      transform .3s 0s;
+  }
+  &--active &__toggle-lines {
+    background-color: transparent;
+  }
+  &--active &__toggle-lines::before {
+    top: 0;
+    transform: rotate(45deg);
+    transition:
+      top .3s 0s,
+      transform .3s .3s;
+  }
+  &--active &__toggle-lines::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+    transition:
+      bottom .3s 0s,
+      transform .3s .3s;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    display: flex;
+    width: 1170px;
+    padding: 0;
+    margin-left: -585px;
+    background-color: transparent;
+    &::before {
+      content: none;
+    }
+
+    &__toggle {
+      display: none;
+    }
+
+    &__toggle-lines {
+
+    }
+  }
 }

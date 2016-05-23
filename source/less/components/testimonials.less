@@ -1,7 +1,16 @@
 .testimonials {
-  padding-top: 135px;
-  padding-bottom: 50px;
+  padding-top: 36px;
+  padding-bottom: 36px;
   color: #fff;
-  background: @purple-63 linear-gradient(to right, @purple-63, @blue-70) center no-repeat;
-  background-size: 2024px 804px;
+  background: @purple-63 linear-gradient(to bottom, @purple-63, @blue-70) no-repeat;
+}
+
+@media (min-width: 768px) {
+  .testimonials {
+    padding-top: 135px;
+    padding-bottom: 50px;
+    background-image: linear-gradient(to right, @purple-63, @blue-70);
+    background-position: center;
+    background-size: 2024px 804px;
+  }
 }

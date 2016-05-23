@@ -53,25 +53,35 @@
   height: 100%;
 }
 
-// Кастомный скроллбар (Chrome, Opera, Safari, IE, but not Edge)
-.scrollbar(@size: 5px; @foreground-color: #eee; @background-color: #fff; @border-radius: 0;) {
-  // For Google Chrome
+// Цвет placeholder'ов
+.placeholder(@color: #333) {
+  // Не группировать! А то не сработает
+  &::-moz-placeholder { color: @color; } // not working
+  &::-webkit-input-placeholder { color: @color; }
+  &:-ms-input-placeholder { color: @color; }
+  &::-ms-input-placeholder { color: @color; }
+  &::placeholder { color: @color; }
+}
+
+// Кастомный скроллбар
+.scrollbar(@size: 5px; @thumb-color: #eee; @track-color: #fff; @border-radius: 3px;) {
+  // Chrome, Opera, Safari
   ::-webkit-scrollbar {
     width: @size;
     height: @size;
   }
   ::-webkit-scrollbar-thumb {
-    background: @foreground-color;
+    background-color: @thumb-color;
     border-radius: @border-radius;
   }
   ::-webkit-scrollbar-track {
-    background: @background-color;
+    background-color: @track-color;
   }
 
-  // For Internet Explorer
+  // IE but not Edge
   body {
-    scrollbar-face-color: @foreground-color;
-    scrollbar-track-color: @background-color;
+    scrollbar-face-color: @thumb-color;
+    scrollbar-track-color: @track-color;
   }
 }
 

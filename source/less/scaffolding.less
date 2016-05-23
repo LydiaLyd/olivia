@@ -5,8 +5,34 @@
 body {
   position: relative;
   min-width: 320px;
-  font-size: @text_font-size;
-  line-height: @text_line-height;
+  font-size: @text_font-size--small;
+  line-height: @text_line-height--small;
   font-family: @text_font-family;
+  hyphens: auto;
   color: @text_color;
+  scrollbar-face-color: @purple-50;
+  scrollbar-track-color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: @purple-50;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::selection {
+  background-color: fade(@purple-50, 50%);
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: @text_font-size;
+    line-height: @text_line-height;
+  }
 }
