@@ -46,8 +46,23 @@
   }
 }
 
+@media (min-width: 544px) {
+  .assistant {
+    width: 217px;
+    flex-grow: 1;
+
+    &:not(:nth-child(even)) {
+      margin-right: 32px;
+    }
+    &:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .assistant {
+    flex-grow: 0;
     width: 525px;
     padding-top: 0;
     padding-right: 230px;
@@ -56,6 +71,9 @@
 
     &:not(:last-child) {
       margin-bottom: 0;
+    }
+    &:not(:nth-child(even)) {
+      margin-right: 0;
     }
     &:nth-child(even) {
       padding-right: 0;
