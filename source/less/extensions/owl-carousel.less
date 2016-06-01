@@ -2,39 +2,6 @@
   position: relative;
 }
 
-.owl-prev,
-.owl-next {
-  position: absolute;
-  top: 50%;
-  width: 20px;
-  height: 20px;
-  margin-top: -10px;
-  font-size: 0;
-  border-style: solid;
-  cursor: pointer;
-  transition: border-color .15s;
-}
-.owl-prev {
-  left: -18px;
-  border-width: 0 0 2px 2px;
-  border-color: transparent transparent @purple-50 @purple-50;
-  transform: rotate(45deg);
-}
-.owl-next {
-  right: -18px;
-  border-width: 0 2px 2px 0;
-  border-color: transparent @purple-50 @purple-50 transparent;
-  transform: rotate(-45deg);
-}
-.owl-prev:hover,
-.owl-next:hover {
-  border-color: @blue-60;
-}
-.owl-prev:active,
-.owl-next:active {
-  border-color: fade(@blue-60, 50%);
-}
-
 .owl-dots {
   position: absolute;
   bottom: 0;

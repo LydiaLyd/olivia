@@ -1,5 +1,8 @@
 .screenshot {
   position: relative;
+  width: 264px;
+  height: 467px;
+
   &__img {
     display: inline-block;
     vertical-align: top;
@@ -18,5 +21,14 @@
   }
   &:hover &__overlay {
     opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .screenshot {
+
+    &__img {
+
+    }
   }
 }

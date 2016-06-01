@@ -1,6 +1,5 @@
 .intro {
-  padding: (36px + 80) 20px 13px;
-  text-align: center;
+  padding: (36px + 66) 20px 13px;
   color: #fff;
   background: @purple-63 linear-gradient(to bottom, @purple-63, @blue-70) no-repeat;
 
@@ -21,6 +20,7 @@
 
   &__text-wrap {
     order: 1;
+    text-align: center;
   }
 
   &__heading {
@@ -67,8 +67,59 @@
 
 @media (min-width: 768px) {
   .intro {
+    padding: (72px + 80) 30px 30px;
+
+    &__center {
+
+    }
+
+    &__img {
+      margin-top: 30px;
+    }
+
+    &__text-wrap {
+
+    }
+
+    &__heading {
+      margin-bottom: 30px;
+      font-size: 60px;
+      line-height: 72px;
+      text-align: center;
+    }
+
+    &__text {
+      width: 710px;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+    }
+
+    &__emphasis {
+      margin-top: 45px;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    &__link {
+
+    }
+    &__link[title="Download from App Store"] {
+      margin-right: 30px;
+      margin-bottom: 0;
+    }
+    &__link[title="Download from Google Play"] {
+
+    }
+    &__link:active {
+
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .intro {
     padding: 0;
-    text-align: left;
     background-image: url(../img/bg_intro.jpg);
     background-position: center;
 
@@ -93,29 +144,31 @@
       order: 2;
       width: 545px;
       padding-top: 100px;
+      text-align: left;
     }
 
     &__heading {
       margin-bottom: 32px;
       font-size: 60px;
       line-height: 72px;
+      text-align: left;
     }
 
     &__text {
-
+      width: auto;
+      text-align: left;
     }
 
     &__emphasis {
       margin-top: 53px;
       margin-bottom: 34px;
-      font-size: 28px;
     }
 
     &__link {
+
     }
     &__link[title="Download from App Store"] {
-      margin-right: 30px;
-      margin-bottom: 0;
+
     }
     &__link[title="Download from Google Play"] {
 

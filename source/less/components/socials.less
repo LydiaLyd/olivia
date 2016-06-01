@@ -16,8 +16,15 @@
     margin-right: 4px;
     margin-left: 4px;
   }
-  &__item--assistant:not(:last-child) {
-    margin-right: 16px;
+  &__item--assistant {
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+  &__item--assistant:first-child {
+    margin-left: 0;
+  }
+  &__item--assistant:last-child {
+    margin-right: 0;
   }
 
   &__link {
@@ -69,13 +76,21 @@
 @media (min-width: 768px) {
   .socials {
     width: 500px;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
     margin-right: auto;
     margin-left: auto;
 
     &--assistant {
       width: auto;
+      margin-bottom: 0;
     }
+  }
+}
+
+@media (min-width: 992px) {
+  .socials {
+    margin-bottom: 40px;
+
     .assistant:nth-child(odd) &--assistant {
       justify-content: flex-end;
     }
@@ -83,12 +98,6 @@
     &__item {
       margin-right: 16px;
       margin-left: 16px;
-    }
-    .assistant:nth-child(odd) &__item--assistant:last-child {
-      margin-right: 0;
-    }
-    .assistant:nth-child(even) &__item--assistant:first-child {
-      margin-left: 0;
     }
   }
 }

@@ -1,10 +1,7 @@
 .slider {
 
-  margin-right: auto;
-  margin-left: auto;
-
   &--screenshots {
-    width: 264px;
+
   }
   &--testimonials {
     padding-bottom: 41px;
@@ -14,21 +11,38 @@
   }
 }
 
-@media (min-width: 573px) {
+@media (min-width: 544px) {
   .slider {
 
     &--screenshots {
-      width: 543px;
-      padding-bottom: 40px;
+      padding-bottom: 50px;
     }
   }
 }
 
 @media (min-width: 768px) {
   .slider {
-    width: 1146px;
 
     &--screenshots {
+      padding-bottom: 62px;
+    }
+    &--testimonials {
+      padding-bottom: 75px;
+    }
+    &--blog-preview {
+      padding-bottom: 59px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .slider {
+    width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
+
+    &--screenshots {
+      width: 1146px;
       padding-bottom: 50px;
     }
     &--testimonials {

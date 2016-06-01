@@ -5,10 +5,6 @@
   color: #fff;
   background: @purple-63 linear-gradient(to bottom, @blue-70, @purple-63) no-repeat;
 
-  &__center {
-
-  }
-
   &__heading {
     margin-top: 0;
     margin-bottom: 39px;
@@ -68,6 +64,46 @@
 
 @media (min-width: 768px) {
   .check-out {
+    padding-top: 72px;
+    padding-right: 30px;
+    padding-left: 30px;
+
+    &__heading {
+      margin-bottom: 45px;
+      font-size: 60px;
+      line-height: 72px;
+    }
+
+    &__list {
+      margin-bottom: 45px;
+      padding-top: 13px;
+    }
+
+    &__item {
+      padding-top: 7px;
+      padding-left: 69px;
+    }
+    &__item:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    .icon {
+      font-size: 42px;
+    }
+
+    &__gist {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    &__text {
+      margin-top: 15px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .check-out {
     padding-top: 0;
     padding-right: 0;
     padding-left: 0;
@@ -84,8 +120,6 @@
 
     &__heading {
       margin-bottom: 95px;
-      font-size: 60px;
-      line-height: 72px;
     }
 
     &__row {
@@ -96,28 +130,10 @@
       width: 535px;
       margin-right: 63px;
       margin-bottom: 0;
-      padding-top: 13px;
     }
 
-    &__item {
-      padding-top: 7px;
-      padding-left: 69px;
-    }
     &__item:not(:last-child) {
       margin-bottom: 38px;
-    }
-
-    .icon {
-      font-size: 42px;
-    }
-
-    &__gist {
-      font-size: 20px;
-      line-height: 24px;
-    }
-
-    &__text {
-      margin-top: 15px;
     }
 
     &__img {

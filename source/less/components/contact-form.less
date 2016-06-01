@@ -23,7 +23,7 @@
   }
 
   &__input {
-    width: 100%;
+    flex-basis: 100%;
     padding: 10px 15px;
   }
 
@@ -131,15 +131,34 @@
 
 @media (min-width: 768px) {
   .contact-form {
-    flex-wrap: wrap;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 45px;
+    padding-bottom: 24px;
+
+    &__input {
+      flex-basis: 45%;
+      flex-grow: 1;
+      margin-bottom: 30px;
+    }
+    &__input:nth-child(odd) {
+      margin-right: 30px;
+    }
+
+    &__message {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .contact-form {
     width: 1085px;
     margin-top: 54px;
     margin-right: auto;
     margin-bottom: 0;
     margin-left: auto;
-    padding-bottom: 24px;
 
     &__input,
     &__message {
@@ -147,7 +166,11 @@
     }
 
     &__input {
-      width: 24%;
+      flex-basis: 20%;
+    }
+    &__input:nth-child(odd),
+    &__input:nth-child(2) {
+      margin-right: 20px;
     }
 
     &__message {

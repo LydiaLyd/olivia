@@ -32,6 +32,22 @@
 
 @media (min-width: 768px) {
   .page-footer {
+    padding: 72px 30px 30px;
+
+    &__copyright {
+      line-height: 22px;
+    }
+
+    &__text-separated {
+      width: auto;
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .page-footer {
     padding: 0;
     background-image: linear-gradient(to right, @purple-63, @blue-70);
     background-position: center;
@@ -41,18 +57,8 @@
       width: 1170px;
       margin-right: auto;
       margin-left: auto;
+      padding-top: 113px;
       padding-bottom: 40px;
-    }
-
-    &__copyright {
-      line-height: 22px;
-    }
-
-    &__text-separated {
-      width: auto;
-    }
-    &__text-separated:not(:last-child) {
-      margin-right: 16px;
     }
   }
 }

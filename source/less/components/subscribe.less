@@ -23,6 +23,22 @@
 
 @media (min-width: 768px) {
   .subscribe {
+    padding: 72px 30px;
+
+    &__heading {
+      margin-bottom: 30px;
+      font-size: 60px;
+      line-height: 72px;
+    }
+
+    &__text {
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .subscribe {
     padding: 0;
     background-image: linear-gradient(to right, @blue-70, @purple-63);
     background-position: center;
@@ -38,15 +54,12 @@
 
     &__heading {
       margin-bottom: 37px;
-      font-size: 60px;
-      line-height: 72px;
     }
 
     &__text {
       width: 979px;
       margin-right: auto;
       margin-left: auto;
-      text-align: center;
     }
   }
 }

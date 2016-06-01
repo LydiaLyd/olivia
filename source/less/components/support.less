@@ -57,6 +57,30 @@
 
 @media (min-width: 768px) {
   .support {
+    padding: 72px 30px;
+
+    &__heading {
+      margin-bottom: 45px;
+      font-size: 60px;
+      line-height: 72px;
+    }
+
+    &__note {
+      margin-bottom: 45px;
+      font-size: 27px;
+    }
+
+    &__emphasis {
+      width: auto;
+      margin-right: 20px;
+      margin-left: 20px;
+      vertical-align: baseline;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .support {
     padding: 0;
 
     &__center {
@@ -69,24 +93,16 @@
 
     &__heading {
       margin-bottom: 40px;
-      font-size: 60px;
       line-height: 84px;
     }
 
     &__note {
       margin-bottom: 110px;
-      font-size: 27px;
     }
 
     &__emphasis {
-      width: auto;
       margin-right: 30px;
       margin-left: 30px;
-      vertical-align: baseline;
-    }
-
-    &__list {
-
     }
   }
 }

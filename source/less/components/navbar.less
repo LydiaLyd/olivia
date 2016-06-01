@@ -87,6 +87,13 @@
 @media (min-width: 544px) {
   .navbar {
 
+
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar {
+
     &__toggle {
       width: 60px;
       height: 60px;
@@ -98,16 +105,11 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .navbar {
     position: absolute;
-    top: 50px;
-    left: 50%;
-    display: flex;
-    width: 1170px;
-    padding: 0;
-    margin-left: -585px;
     background-color: transparent;
+
     &::before {
       content: none;
     }
@@ -119,5 +121,15 @@
     &__toggle-lines {
 
     }
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar {
+    top: 50px;
+    left: 50%;
+    width: 1170px;
+    margin-left: -585px;
+    padding: 0;
   }
 }

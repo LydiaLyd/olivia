@@ -6,6 +6,7 @@
     position: relative;
     display: inline-block;
     vertical-align: top;
+    width: 100%;
     margin-bottom: 26px;
   }
 
@@ -34,17 +35,29 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 544px) {
   .subscribe-form {
-    margin-top: 50px;
 
     &__wrap {
+      width: auto;
+      margin-right: 11px;
       margin-bottom: 0;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .subscribe-form {
+    margin-top: 45px;
 
     &__input {
       width: 418px;
-      margin-right: 11px;
     }
+  }
+}
+
+@media (min-width: 992px) {
+  .subscribe-form {
+    margin-top: 50px;
   }
 }

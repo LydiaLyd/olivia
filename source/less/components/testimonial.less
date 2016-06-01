@@ -1,4 +1,5 @@
 .testimonial {
+  position: relative;
   margin: 0;
   padding-top: 225px;
 
@@ -13,17 +14,17 @@
   &__text::after {
     content: "“";
     position: absolute;
-    font-size: 60px;
+    font-size: 38px;
     line-height: 1;
     font-family: "Times New Roman";
   }
   &__text::before {
     top: 0;
-    left: 7px;
+    left: 12px;
   }
   &__text::after {
     bottom: 0;
-    right: 7px;
+    right: 12px;
     transform: rotate(180deg);
   }
 
@@ -66,7 +67,26 @@
 
 @media (min-width: 768px) {
   .testimonial {
-    position: relative;
+
+    &__text {
+      padding-right: 30px + 40;
+      padding-left: 30px + 40;
+    }
+    &__text::before,
+    &__text::after {
+      font-size: 60px;
+    }
+    &__text::before {
+      left: 30px;
+    }
+    &__text::after {
+      right: 30px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .testimonial {
     padding-top: 20px;
     padding-left: 260px;
 
@@ -74,6 +94,7 @@
       width: 820px;
       margin-bottom: 20px;
       padding-right: 0;
+      padding-left: 40px;
       text-align: left;
     }
     &__text::before {

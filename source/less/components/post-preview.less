@@ -1,7 +1,6 @@
 .post-preview {
   position: relative;
   min-height: 89px;
-  padding-right: 20px;
   padding-left: 80px;
   font-size: 14px;
   line-height: 24px;
@@ -42,12 +41,16 @@
 
 @media (min-width: 768px) {
   .post-preview {
-    padding-right: 0;
-    padding-left: 100px;
 
     &__heading {
       font-size: 18px;
     }
+  }
+}
+
+@media (min-width: 992px) {
+  .post-preview {
+    padding-left: 100px;
 
     &__lead {
       margin-bottom: 4px;
