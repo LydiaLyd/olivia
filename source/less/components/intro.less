@@ -8,18 +8,22 @@
     flex-direction: column;
   }
 
-  &__img {
-    display: block;
-    order: 2;
+  &__img-wrap {
     width: 280px;
-    height: 356px;
     margin-top: 13px;
     margin-right: auto;
     margin-left: auto;
   }
 
+  &__img {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: auto;
+  }
+
   &__text-wrap {
-    order: 1;
+    order: -1;
     text-align: center;
   }
 
@@ -69,16 +73,8 @@
   .intro {
     padding: (72px + 80) 30px 30px;
 
-    &__center {
-
-    }
-
-    &__img {
+    &__img-wrap {
       margin-top: 30px;
-    }
-
-    &__text-wrap {
-
     }
 
     &__heading {
@@ -101,30 +97,63 @@
       font-size: 28px;
     }
 
-    &__link {
-
-    }
     &__link[title="Download from App Store"] {
       margin-right: 30px;
       margin-bottom: 0;
-    }
-    &__link[title="Download from Google Play"] {
-
-    }
-    &__link:active {
-
     }
   }
 }
 
 @media (min-width: 992px) {
   .intro {
-    padding: 0;
     background-image: url(../img/bg_intro.jpg);
-    background-position: center;
+    background-position: top center;
 
     &__center {
       flex-direction: row;
+    }
+
+    &__img-wrap {
+      width: 45%;
+      max-width: 530px;
+      margin-top: 0;
+      margin-right: 5%;
+      margin-left: 0;
+    }
+
+    &__text-wrap {
+      order: 1;
+      width: 50%;
+      padding-top: 50px;
+      text-align: left;
+    }
+
+    &__heading {
+      margin-bottom: 15px;
+      font-size: 50px;
+      line-height: 62px;
+      text-align: left;
+    }
+
+    &__text {
+      width: auto;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    &__emphasis {
+      margin-top: 45px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .intro {
+    padding: 0;
+
+    &__center {
       width: 1170px;
       margin-right: auto;
       margin-left: auto;
@@ -132,49 +161,31 @@
       padding-bottom: 65px;
     }
 
-    &__img {
-      order: 1;
+    &__img-wrap {
       width: 530px;
       height: 673px;
-      margin-top: 0;
       margin-right: 70px;
     }
 
     &__text-wrap {
-      order: 2;
       width: 545px;
       padding-top: 100px;
-      text-align: left;
     }
 
     &__heading {
       margin-bottom: 32px;
       font-size: 60px;
       line-height: 72px;
-      text-align: left;
     }
 
     &__text {
-      width: auto;
-      text-align: left;
+      margin-top: 30px;
+      margin-bottom: 30px;
     }
 
     &__emphasis {
       margin-top: 53px;
       margin-bottom: 34px;
-    }
-
-    &__link {
-
-    }
-    &__link[title="Download from App Store"] {
-
-    }
-    &__link[title="Download from Google Play"] {
-
-    }
-    &__link:active {
-
     }
   }
 }

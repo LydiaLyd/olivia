@@ -91,9 +91,17 @@
   .socials {
     margin-bottom: 40px;
 
+    &--assistant {
+      margin-bottom: 0;
+    }
     .assistant:nth-child(odd) &--assistant {
       justify-content: flex-end;
     }
+  }
+}
+
+@media (min-width: 1200px) {
+  .socials {
 
     &__item {
       margin-right: 16px;

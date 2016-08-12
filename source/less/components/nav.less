@@ -6,12 +6,13 @@
   flex-direction: column;
   width: 100%;
   .ul-reset;
-  background-color: inherit;
+  background-color: @purple-50;
   box-shadow: 0 5px 5px 0 rgba(84,20,109,.5);
-  transform: translateY(calc(-100% ~"- 10px"));
+  // 5% - magic number, чтобы не было видно тени
+  transform: translateY(-105%);
   transition: transform .5s;
 
-  .navbar--active & {
+  .navbar--drop-nav & {
     transform: translateY(0);
   }
 
@@ -23,8 +24,8 @@
     display: block;
     padding-right: 20px;
     padding-left: 20px;
-    font-size: 18px;
-    line-height: 45px;
+    font-size: 16px;
+    line-height: 40px;
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
@@ -67,6 +68,7 @@
   .nav {
 
     &__link {
+      font-size: 18px;
       line-height: 54px;
     }
   }
@@ -77,18 +79,17 @@
     position: static;
     flex-direction: row;
     width: auto;
+    background-color: transparent;
     box-shadow: none;
     transform: none;
 
-    &__item {
-
-    }
     &__item:not(:last-child) {
       margin-right: 5px;
     }
 
     &__link {
-      line-height: 39px;
+      font-size: 16px;
+      line-height: 40px;
       border-radius: 20px;
       background-color: transparent;
       border-top: none;
@@ -108,6 +109,16 @@
     }
     &__link--current:active {
       color: #fff;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav {
+
+    &__link {
+      font-size: 18px;
+      line-height: 45px;
     }
   }
 }

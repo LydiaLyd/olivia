@@ -10,7 +10,12 @@
   font-style: normal;
 }
 
-[class*="icon"]::before {
+.icon {
+  display: inline-block;
+  vertical-align: baseline
+}
+
+.icon::before {
   display: inline-block;
   vertical-align: baseline;
   font-family: "@{icon-font_name}";
@@ -33,3 +38,8 @@
 .icon--gplus:before { content: "\e807"; }
 .icon--dribbble:before { content: "\e808"; }
 .icon--globe:before { content: "\e809"; }
+
+.icon--contacts { .sprite(@contacts) };
+.icon--music { .sprite(@music); }
+.icon--image { .sprite(@image); }
+.icon--email { .sprite(@email); }

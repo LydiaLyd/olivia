@@ -55,11 +55,10 @@
 
 // Цвет placeholder'ов
 .placeholder(@color: #333) {
-  // Не группировать! А то не сработает
-  &::-moz-placeholder { color: @color; } // not working
+  // не группировать - не сработает
   &::-webkit-input-placeholder { color: @color; }
+  &::-moz-placeholder { color: @color; }
   &:-ms-input-placeholder { color: @color; }
-  &::-ms-input-placeholder { color: @color; }
   &::placeholder { color: @color; }
 }
 

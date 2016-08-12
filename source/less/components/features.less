@@ -27,7 +27,7 @@
   }
 
   &__item {
-    flex-basis: 100%;
+    width: 100%;
     padding-right: 10px;
     padding-left: 10px;
   }
@@ -63,6 +63,7 @@
     &__item {
       flex-basis: 236px;
       flex-grow: 1;
+      width: auto;
       padding-right: 15px;
       padding-left: 15px;
     }
@@ -113,9 +114,6 @@
       margin-right: 30px;
     }
 
-    .icon {
-
-    }
     &__item:first-child:hover .icon--contacts {
       .sprite-position(@contacts-hover);
     }
@@ -136,36 +134,18 @@
 
 @media (min-width: 992px) {
   .features {
-    padding: 0;
     background: #fff url(../img/bg_features.jpg) center top no-repeat;
 
-    &__center {
-      width: 1170px;
-      margin-right: auto;
-      margin-left: auto;
-      padding-top: 105px;
-      padding-bottom: 110px;
-    }
-
     &__heading {
-      margin-bottom: 25px;
-      font-size: 60px;
       line-height: 84px;
     }
 
     &__text {
       max-width: 1135px;
-      margin-top: 25px;
-    }
-
-    &__list {
-      margin-top: 75px;
     }
 
     &__item {
       width: 370px;
-      padding-right: 30px;
-      padding-left: 30px;
     }
 
     &__name {
@@ -176,6 +156,37 @@
 
     &__descr {
       margin-top: 30px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .features {
+    padding: 0;
+
+    &__center {
+      max-width: 1170px;
+      margin-right: auto;
+      margin-left: auto;
+      padding-top: 105px;
+      padding-bottom: 110px;
+    }
+
+    &__heading {
+      margin-bottom: 25px;
+    }
+
+    &__text {
+      margin-top: 25px;
+    }
+
+    &__list {
+      margin-top: 75px;
+    }
+
+    &__item {
+      padding-right: 30px;
+      padding-left: 30px;
     }
   }
 }

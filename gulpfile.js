@@ -1,18 +1,17 @@
 "use strict";
 
 var gulp = require("gulp"),
+    jade = require("gulp-jade"),
+    htmlcomb = require('gulp-htmlcomb'),
+    htmlmin = require("gulp-htmlmin"),
     less = require("gulp-less"),
     autoprefixer = require("gulp-autoprefixer"),
     combineMq = require("gulp-combine-mq"),
-    csscomb = require("gulp-csscomb"),
     csso = require("gulp-csso"),
     concat = require("gulp-concat"),
     uglify = require("gulp-uglify"),
-    htmlmin = require("gulp-htmlmin"),
-    jade = require("gulp-jade"),
-    htmlcomb = require('gulp-htmlcomb'),
-    imagemin = require("gulp-imagemin"),
     spritesmith = require("gulp.spritesmith"),
+    imagemin = require("gulp-imagemin"),
     plumber = require("gulp-plumber"),
     rename = require("gulp-rename"),
     livereload = require("gulp-livereload"),
@@ -20,72 +19,53 @@ var gulp = require("gulp"),
     gulpSequence = require("gulp-sequence"),
     merge = require("merge-stream");
 
-// Создание разметки
+// Компиляция разметки
 gulp.task("markup", function() {
   // return gulp.src(["source/*.html", "!source/_components-lib.html"])
   return gulp.src(["source/jade/*.jade", "!source/jade/layout.jade", "!source/jade/mixins.jade"])
     .pipe(plumber())
-    .pipe(jade({pretty: true}))
+    .pipe(jade())
     .pipe(htmlcomb())
-    .pipe(gulp.dest("build"))
     .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(rename({suffix: ".min"}))
     .pipe(gulp.dest("build"))
     .pipe(livereload());
 });
 
-// Создание стилей
+// Компиляция стилей
 gulp.task("style", function() {
   return gulp.src("source/less/style.less")
     .pipe(plumber())
     .pipe(less())
     .pipe(autoprefixer({browsers: ["last 2 versions", "ie 10"]}))
-    .pipe(combineMq({beautify: true}))
-    .pipe(csscomb())
-    .pipe(gulp.dest("build/css"))
+    .pipe(combineMq())
     .pipe(csso())
     .pipe(rename({suffix: ".min"}))
     .pipe(gulp.dest("build/css"))
     .pipe(livereload());
 });
 
-// Склеивание своих скриптов
+// Конкатенация своих скриптов
 gulp.task("script", function() {
   return gulp.src("source/js/*.js")
     .pipe(plumber())
     .pipe(concat("all.js"))
-    .pipe(rename("script.js"))
-    .pipe(gulp.dest("build/js"))
     .pipe(uglify())
-    .pipe(rename({suffix: ".min"}))
+    .pipe(rename("script.min.js"))
     .pipe(gulp.dest("build/js"))
     .pipe(livereload());
 });
 
-// Склеивание вендорных скриптов
+// Конкатенация вендорных скриптов
 gulp.task("vendor", function() {
   return gulp.src("source/js/vendor/*.js")
     .pipe(plumber())
     .pipe(concat("all.js"))
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(rename("vendor.min.js"))
     .pipe(gulp.dest("build/js"));
 });
 
-// Перенос шрифтов из папки source/ в папку build/
-gulp.task("fonts", function() {
-  return gulp.src("source/font/*")
-    .pipe(gulp.dest("build/font"));
-});
-
-// Сжатие изображений
-gulp.task("images", function() {
-  return gulp.src("source/img/*.{png,jpg,gif,svg,ico}")
-    .pipe(imagemin())
-    .pipe(gulp.dest("build/img"));
-});
-
-// СБорка спрайта
+// Сборка спрайта
 gulp.task("sprite", function () {
   var spriteData = gulp.src("source/img/sprite/*.png").pipe(spritesmith({
     imgName: "sprite.png",
@@ -104,14 +84,27 @@ gulp.task("sprite", function () {
   return merge(imgStream, cssStream);
 });
 
-// Удаление папки build/
+// Оптимизация изображений
+gulp.task("images", function() {
+  return gulp.src("source/img/*.{png,jpg,svg,ico}")
+    .pipe(imagemin())
+    .pipe(gulp.dest("build/img"));
+});
+
+// Перенести шрифты из source/ в build/
+gulp.task("fonts", function() {
+  return gulp.src("source/font/*")
+    .pipe(gulp.dest("build/font"));
+});
+
+// Удалить папку build/
 gulp.task("clean", function() {
   return del(["build"]);
 });
 
 // Сборка проекта
 gulp.task("build", function(callback) {
-  gulpSequence("clean", ["markup", "style", "script", "vendor", "fonts"/*, "sprite"*/], "images", callback);
+  gulpSequence("clean", ["markup", "style", "script", "vendor", "fonts", "sprite"], "images", callback);
 });
 
 // Отслеживание изменений в файлах
@@ -125,5 +118,5 @@ gulp.task("watch", ["markup", "style", "script"], function() {
 
 // Сборка проекта + отслеживание изменений
 gulp.task("default", function(callback) {
-  gulpSequence(["markup", "style", "script", "vendor", "fonts"/*, "images"*/], "watch", callback);
+  gulpSequence(["markup", "style", "script", "vendor", "fonts", "images"], "watch", callback);
 });

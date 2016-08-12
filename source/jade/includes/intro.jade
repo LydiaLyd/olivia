@@ -1,6 +1,9 @@
 section.intro#intro
   .intro__center
-    img.intro__img(src="img/img_intro.png" width="530" height="673" alt="Image")
+    .intro__img-wrap
+      picture
+        source(media="(min-width: 992px)" srcset="img/img_intro--lg@1x.png 1x")
+        img.intro__img(src="img/img_intro--xs@1x.png" srcset="img/img_intro--xs@2x.png 2x" width="265" height="336" alt="Image")
     div.intro__text-wrap
       h1.intro__heading Hello & Welcome to Olivia
       p.intro__text Compellingly fashion enterprise-wide services before client-based outsourcing. Enthusiastically reinvent inexpensive innovation rather than collaborative expertise. Synergistically communicate equity invested markets for tactical portals.

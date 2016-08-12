@@ -1,5 +1,5 @@
 //- items - array
-//- +nav([{text: "", href: "", current: true}, {text: "", href: ""}, {text: "", href: ""}])
+//- +nav([{text: "", href: "", current: true}, {text: "", href: ""}])
 mixin nav(items)
   ul.nav
     each item in items
@@ -19,7 +19,7 @@ mixin icon(modifier)
   
   
 //- items - array, modifier - string
-//- +socials([{icon: "", href: "", hint: ""}, {icon: "", href: "", hint: ""}, {icon: "", href: "", hint: ""}], "")
+//- +socials([{icon: "", href: "", hint: ""}, {icon: "", href: "", hint: ""}], "")
 mixin socials(items, modifier)
   if modifier
     ul(class="socials socials--" + modifier)

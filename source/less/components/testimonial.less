@@ -91,9 +91,7 @@
     padding-left: 260px;
 
     &__text {
-      width: 820px;
-      margin-bottom: 20px;
-      padding-right: 0;
+      padding-right: 40px;
       padding-left: 40px;
       text-align: left;
     }
@@ -101,8 +99,7 @@
       left: 0;
     }
     &__text::after {
-      right: auto;
-      left: 440px;
+      right: 0;
     }
 
     &__author,
@@ -116,10 +113,6 @@
       text-align: left;
     }
 
-    &__emphasis {
-
-    }
-
     &__occupation {
       text-align: left;
     }
@@ -127,6 +120,21 @@
     &__wrap {
       margin-left: auto;
       left: 0;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .testimonial {
+
+    &__text {
+      width: 820px;
+      margin-bottom: 20px;
+      padding-right: 0;
+    }
+    &__text::after {
+      right: auto;
+      left: 440px;
     }
   }
 }

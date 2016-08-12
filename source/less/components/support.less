@@ -41,7 +41,6 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     .ul-reset;
   }
 }
@@ -51,6 +50,10 @@
 
     &__note {
       margin-bottom: 26px;
+    }
+
+    &__list {
+      justify-content: space-between;
     }
   }
 }
@@ -81,6 +84,16 @@
 
 @media (min-width: 992px) {
   .support {
+
+    &__emphasis {
+      margin-right: 30px;
+      margin-left: 30px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .support {
     padding: 0;
 
     &__center {
@@ -98,11 +111,6 @@
 
     &__note {
       margin-bottom: 110px;
-    }
-
-    &__emphasis {
-      margin-right: 30px;
-      margin-left: 30px;
     }
   }
 }

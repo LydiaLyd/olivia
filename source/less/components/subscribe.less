@@ -39,10 +39,21 @@
 
 @media (min-width: 992px) {
   .subscribe {
-    padding: 0;
     background-image: linear-gradient(to right, @blue-70, @purple-63);
     background-position: center;
-    background-size: 2024px 804px;
+    background-size: 2024px 100%;
+
+    &__text {
+      width: 90%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .subscribe {
+    padding: 0;
 
     &__center {
       width: 1170px;
@@ -58,8 +69,6 @@
 
     &__text {
       width: 979px;
-      margin-right: auto;
-      margin-left: auto;
     }
   }
 }

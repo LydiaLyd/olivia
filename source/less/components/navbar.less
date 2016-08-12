@@ -1,25 +1,21 @@
 .navbar {
   position: fixed;
   z-index: @z-index_navbar;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
-  padding: 10px 20px;
-  background-color: @purple-50;
-  // pseudo plank
-  &::before {
-    content: "pseudo plank";
-    .cover;
-    z-index: @z-index_navbar-pseudo-plank;
-    font-size: 0;
-    background-color: inherit;
+
+  &__header {
+    position: relative;
+    z-index: @z-index_navbar-header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: @purple-50;
     box-shadow: 0 5px 5px 0 rgba(84,20,109,.5);
   }
 
   &__toggle {
     position: relative;
-    z-index: @z_index_nav-toggle;
     display: block;
     width: 46px;
     height: 46px;
@@ -50,9 +46,6 @@
     background-color: #fff;
     pointer-events: none;
   }
-  // Не получилось использовать transition-property, transition-duration, transition-delay.
-  // Из-за автопрефиксера трансформации работали неправильно.
-  // Или же из-за моих кривых рук.
   &__toggle-lines::before {
     top: -15px;
     transition:
@@ -65,17 +58,17 @@
       bottom .3s .3s,
       transform .3s 0s;
   }
-  &--active &__toggle-lines {
+  &--drop-nav &__toggle-lines {
     background-color: transparent;
   }
-  &--active &__toggle-lines::before {
+  &--drop-nav &__toggle-lines::before {
     top: 0;
     transform: rotate(45deg);
     transition:
       top .3s 0s,
       transform .3s .3s;
   }
-  &--active &__toggle-lines::after {
+  &--drop-nav &__toggle-lines::after {
     bottom: 0;
     transform: rotate(-45deg);
     transition:
@@ -84,16 +77,8 @@
   }
 }
 
-@media (min-width: 544px) {
-  .navbar {
-
-
-  }
-}
-
 @media (min-width: 768px) {
   .navbar {
-
     &__toggle {
       width: 60px;
       height: 60px;
@@ -108,18 +93,21 @@
 @media (min-width: 992px) {
   .navbar {
     position: absolute;
+    top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 30px;
     background-color: transparent;
 
-    &::before {
-      content: none;
+    &__header {
+      padding: 0;
+      background-color: transparent;
+      box-shadow: none;
     }
 
     &__toggle {
       display: none;
-    }
-
-    &__toggle-lines {
-
     }
   }
 }
